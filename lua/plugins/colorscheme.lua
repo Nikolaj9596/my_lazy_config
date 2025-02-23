@@ -14,7 +14,9 @@ return {
       -- colorscheme = "kanagawa-paper",
       -- colorscheme = "material",
       -- colorscheme = "miasma",
-      colorscheme = "onedark",
+      -- colorscheme = "onedark",
+      -- colorscheme = "darkplus",
+      colorscheme = "catppuccin",
     },
   },
   {
