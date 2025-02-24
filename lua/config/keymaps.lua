@@ -14,9 +14,25 @@ map("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)
 map("n", "*", "*zz", opts)
 map("n", "#", "#zz", opts)
 
-map("n", "<Leader>w", ":w<CR>", opts)
+-- Delete buffer
+map("n", "<Leader>bd", "<cmd>Bdelete!<CR>", opts)
+
+-- Save buffer
+map("n", "<Leader>w", "<cmd>w<cr><esc>", opts)
+
+-- Quite
+map(
+  "n",
+  "<Leader>qq",
+  '<cmd>lua require("settings/functions").smart_quit()<CR>',
+  { noremap = true, silent = true, desc = "Quite" }
+)
+
+-- Marks
+map("n", "<Leader>md", ":delmarks<Space>", { noremap = true, silent = true })
 
 map("i", "jk", "<ESC>", opts)
+map("n", "<Leader>ch", "<cmd>nohlsearch<cr>", { noremap = true, silent = true, desc = "nohlsearch" })
 
 -- Visual --
 map("v", "<", "<gv", opts)
