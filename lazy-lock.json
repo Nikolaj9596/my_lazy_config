@@ -7,6 +7,7 @@
   "catppuccin": { "branch": "main", "commit": "4bb938bbba41d306db18bf0eb0633a5f28fd7ba0" },
   "cmake-tools.nvim": { "branch": "master", "commit": "72a5eb8fd330da3e4a5f9ca0722ebf423f54bc8e" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
+  "cmp-emoji": { "branch": "main", "commit": "e8398e2adf512a03bb4e1728ca017ffeac670a9f" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },

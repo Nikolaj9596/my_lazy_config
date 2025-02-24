@@ -6,11 +6,19 @@ M.k9s_toggle = function()
     cmd = "k9s",
     hidden = true,
     direction = "float",
-    on_open = function(_)
+    float_opts = {
+      border = "double",
+    },
+    -- function to run on opening the terminal
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    end,
+    -- function to run on closing the terminal
+    on_close = function(term)
       vim.cmd("startinsert!")
     end,
-    on_close = function(_) end,
-    count = 99,
+    count = 98,
   })
   k9s:toggle()
 end
@@ -21,10 +29,17 @@ M.lazydocker_toggle = function()
     cmd = "lazydocker",
     hidden = true,
     direction = "float",
-    on_open = function(_)
+    float_opts = {
+      border = "double",
+    },
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    end,
+    -- function to run on closing the terminal
+    on_close = function(term)
       vim.cmd("startinsert!")
     end,
-    on_close = function(_) end,
     count = 99,
   })
   lazydocker:toggle()
