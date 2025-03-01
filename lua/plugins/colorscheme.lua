@@ -7,6 +7,12 @@ return {
     },
   },
   {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "solarized-osaka",
@@ -15,8 +21,8 @@ return {
       -- colorscheme = "material",
       -- colorscheme = "miasma",
       -- colorscheme = "onedark",
-      -- colorscheme = "darkplus",
-      colorscheme = "catppuccin",
+      colorscheme = "darkplus",
+      -- colorscheme = "catppuccin",
     },
   },
   {

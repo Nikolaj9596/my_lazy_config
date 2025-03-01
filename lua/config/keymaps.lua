@@ -14,25 +14,37 @@ map("n", "<C-l>", ":TmuxNavigateRight<CR>", opts)
 map("n", "*", "*zz", opts)
 map("n", "#", "#zz", opts)
 
+map("n", "sv", "<cmd>vsplit<CR>", opts)
+map("n", "<Leader>ch", "<cmd>nohlsearch<cr>", { noremap = true, silent = true, desc = "nohlsearch" })
+
 -- Delete buffer
 map("n", "<Leader>bd", "<cmd>Bdelete!<CR>", opts)
 
 -- Save buffer
 map("n", "<Leader>w", "<cmd>w<cr><esc>", opts)
+-- Terminal
+
+map("n", "<c-_>", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root(), win = { position = "float" } })
+end, { desc = "Terminal (Root Dir)" })
+
+map("n", "<c-_>", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root(), win = { position = "float" } })
+end, { desc = "which_key_ignore" })
 
 -- Quite
-map(
-  "n",
-  "<Leader>qq",
-  '<cmd>lua require("settings/functions").smart_quit()<CR>',
-  { noremap = true, silent = true, desc = "Quite" }
-)
+-- map(
+--   "n",
+--   "<Leader>qq",
+--   '<cmd>lua require("settings/functions").smart_quit()<CR>',
+--   { noremap = true, silent = true, desc = "Quite" }
+-- )
 
 -- Marks
 map("n", "<Leader>md", ":delmarks<Space>", { noremap = true, silent = true })
 
+-- Keystore
 map("i", "jk", "<ESC>", opts)
-map("n", "<Leader>ch", "<cmd>nohlsearch<cr>", { noremap = true, silent = true, desc = "nohlsearch" })
 
 -- Visual --
 map("v", "<", "<gv", opts)
@@ -43,6 +55,7 @@ if Util.has("Comment.nvim") then
   map("n", "<Leader>/", function()
     require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1)
   end, { desc = "Toggle comment line" })
+
   map(
     "v",
     "<Leader>/",
