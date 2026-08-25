@@ -35,7 +35,7 @@ end, { desc = "which_key_ignore" })
 -- Quite
 map(
   "n",
-  "<Leader>qq",
+  "<Leader>q",
   '<cmd>lua require("settings/functions").smart_quit()<CR>',
   { noremap = true, silent = true, desc = "Quite" }
 )

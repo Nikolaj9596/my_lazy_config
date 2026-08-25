@@ -1,6 +1,6 @@
 local options = {
-  foldmethod = "indent",
-  foldlevel = 0,
+  -- foldmethod = "indent",
+  -- foldlevel = 0,
   backup = false,
   clipboard = "unnamedplus",
   cmdheight = 1,
@@ -40,6 +40,8 @@ local options = {
   showcmd = false,
   ruler = false,
 }
+
+vim.opt.spellfile = vim.fs.abspath("~/.config/nvim/spell/en.utf-8.add")
 
 for k, v in pairs(options) do
   vim.opt[k] = v
