@@ -1,29 +1,38 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
-    vim.lsp.enable("cspell_ls"),
-    vim.lsp.config("cspell_ls", {
-      cmd = { "cspell-lsp", "--stdio" },
-      filetypes = {
-        "lua",
-        "python",
-        "javascript",
-        "typescript",
-        "html",
-        "css",
-        "json",
-        "yaml",
-        "markdown",
-        "gitcommit",
-        "go",
-        "proto",
+    servers = {
+      -- Registered as a normal LSP server: LazyVim configures it, enables it and
+      -- installs the `cspell-lsp` binary via Mason (ensure_installed).
+      -- `cmd` and `root_markers` come from nvim-lspconfig's built-in cspell_ls config.
+      cspell_ls = {
+        filetypes = {
+          "lua",
+          "python",
+          "javascript",
+          "typescript",
+          "html",
+          "css",
+          "json",
+          "yaml",
+          "markdown",
+          "gitcommit",
+          "go",
+          "proto",
+        },
       },
-      root_markers = { ".git" },
-    }),
-    setup = {
-      clangd = function(_, opts)
-        opts.capabilities.offsetEncoding = { "utf-16" }
-      end,
+      -- LazyVim's python extra also sets pyright settings; these merge with its defaults.
+      pyright = {
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "basic",
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+            },
+          },
+        },
+      },
     },
   },
 }

@@ -1,15 +1,29 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "version": "0.2",
-  "language": "en",
+  "language": "en,ru,ru-ru",
   "globRoot": ".",
   "dictionaryDefinitions": [
     {
       "name": "cspell-tool",
       "path": "./cspell-tool.txt",
       "addWords": true
+    },
+    {
+      "name": "ru-ru",
+      "path": "./dictionaries/ru_ru.trie.gz",
+      "description": "Russian dictionary (from @cspell/dict-ru_ru)",
+      "dictionaryInformation": {
+        "locale": "ru-RU"
+      }
     }
   ],
-  "dictionaries": ["cspell-tool"],
-  "ignorePaths": ["node_modules", "dist", "build", "/cspell-tool.txt"]
+  "dictionaries": ["cspell-tool", "ru-ru"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build",
+    "/cspell-tool.txt",
+    "/dictionaries/ru_ru.trie.gz"
+  ]
 }

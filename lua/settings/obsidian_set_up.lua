@@ -1,9 +1,6 @@
-local status_ok, obsidian = pcall(require, "obsidian")
-if not status_ok then
-  return
-end
-
-obsidian.setup({
+-- Obsidian options, consumed by `lua/plugins/obsidian.lua` via `opts`.
+-- Kept as a plain table so the plugin stays lazy-loaded.
+return {
   workspaces = {
     {
       name = "Notes",
@@ -160,7 +157,7 @@ obsidian.setup({
 
   picker = {
     -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
-    name = "telescope.nvim",
+    name = "fzf-lua",
     -- Optional, configure key mappings for the picker. These are the defaults.
     -- Not all pickers support all mappings.
     mappings = {
@@ -276,4 +273,4 @@ obsidian.setup({
       return string.format("![%s](%s)", path.name, path)
     end,
   },
-})
+}

@@ -41,7 +41,13 @@ local options = {
   ruler = false,
 }
 
-vim.opt.spellfile = vim.fs.abspath("~/.config/nvim/spell/en.utf-8.add")
+-- Check English and Russian at the same time.
+-- `spell/ru.utf-8.spl` (and .sug) are the Vim runtime Russian dictionaries.
+vim.opt.spelllang = { "en", "ru" }
+vim.opt.spellfile = {
+  vim.fs.abspath("~/.config/nvim/spell/en.utf-8.add"),
+  vim.fs.abspath("~/.config/nvim/spell/ru.utf-8.add"),
+}
 
 for k, v in pairs(options) do
   vim.opt[k] = v

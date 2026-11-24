@@ -40,6 +40,17 @@ map(
   { noremap = true, silent = true, desc = "Quite" }
 )
 
+-- Spell: add word to the dictionary matching its script (Cyrillic -> ru)
+map("n", "zg", function()
+  require("settings.functions").smart_add_to_spell()
+end, { noremap = true, silent = true, desc = "Add word to spell dictionary (auto)" })
+map("n", "<Leader>ze", function()
+  require("settings.functions").add_to_spell("en")
+end, { noremap = true, silent = true, desc = "Add word to EN dictionary" })
+map("n", "<Leader>zr", function()
+  require("settings.functions").add_to_spell("ru")
+end, { noremap = true, silent = true, desc = "Add word to RU dictionary" })
+
 -- Marks
 map("n", "<Leader>md", ":delmarks<Space>", { noremap = true, silent = true })
 

@@ -53,6 +53,3 @@ require("lazy").setup({
 })
 
 require("config.options")
-require("settings.obsidian_set_up")
-require("settings.wichkey_set_up")
-require("settings.lspconfig_set_up")
